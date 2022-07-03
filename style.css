@@ -1,0 +1,14 @@
+.container{
+    display:grid;
+    grid-template-columns: 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm;
+    grid-template-rows: 1cm 1cm 1cm 1cm 1cm 1cm 1cm 1cm;
+}
+
+
+.box{
+    border: black solid 1px;
+    grid-column-start:1 ;
+    grid-column-end:8 ;
+    grid-row-start:1 ;
+    grid-row-end: 6;
+}
