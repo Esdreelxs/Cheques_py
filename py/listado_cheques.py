@@ -1,6 +1,6 @@
 import csv
 
-#cheque  = open("", "w")
+cheque  = open("csv/listado.csv", "r")
 
 dni = int(input("Ingrese el DNI: "))
 
