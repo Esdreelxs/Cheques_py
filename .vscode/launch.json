@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}/listado_cheques.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["ARCHIVO", "lo que quiero escribir"]
+            "args": ["cheque", "lo que quiero escribir"]
 
         }
     ]
