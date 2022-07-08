@@ -4,7 +4,7 @@
 #PANTALLA
 #EMITIDO
 #APROBADO
-
+print(sys.argv[0])
 archivo = input("\nEn que archivo desea buscar? ")
 
 dni = int(input("\nIngrese el DNI: "))
