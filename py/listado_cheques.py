@@ -18,12 +18,13 @@ tipo = input("\nTipo de cheque (EMITIDO o DEPOSITADO):\n")
 estado = input("\nEstado del cheque (PENDIENTE, APROBADO o RECHAZADO)(opcional):\n")
 rangFecha = input("\nIngrese un rango de fechas (dd-mm-aaaa:dd-mm-aaaa)(opcional):\n")
 
-date1 = rangFecha[0:10]
-date1 = datetime.datetime.strptime(date1,r"%d-%m-%Y")
-date1 = datetime.datetime.timestamp(date1)
-date2 = rangFecha[11:21]
-date2 = datetime.datetime.strptime(date2,r"%d-%m-%Y")
-date2 = datetime.datetime.timestamp(date2)
+if rangFecha != '':
+    date1 = rangFecha[0:10]
+    date1 = datetime.datetime.strptime(date1,r"%d-%m-%Y")
+    date1 = datetime.datetime.timestamp(date1)
+    date2 = rangFecha[11:21]
+    date2 = datetime.datetime.strptime(date2,r"%d-%m-%Y")
+    date2 = datetime.datetime.timestamp(date2)
 
 with open(archivo) as f:
     reader= csv.reader(f, delimiter=',')
