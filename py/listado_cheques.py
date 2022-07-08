@@ -10,17 +10,17 @@ import sys
 import datetime
 
 print(sys.argv[0])
-archivo = input("\nEn que archivo desea buscar? ")
+archivo = input("\nEn que archivo desea buscar?\n")
 
-dni = int(input("\nIngrese el DNI: "))
+dni = int(input("\nIngrese el DNI:\n"))
 
-salida = input("\nEscriba como desea visualizar los datos (PANTALLA o CSV): ")
+salida = input("\nEscriba como desea visualizar los datos (PANTALLA o CSV):\n")
 
-tipo = input("\nTipo de cheque (EMITIDO o DEPOSITADO): ")
+tipo = input("\nTipo de cheque (EMITIDO o DEPOSITADO):\n")
 
-estado = input("\nEstado del cheque (PENDIENTE, APROBADO o RECHAZADO): ")
+estado = input("\nEstado del cheque (PENDIENTE, APROBADO o RECHAZADO)(opcional):\n")
 
-rangFecha = input("\nIngrese un rango de fechas (dd-mm-aaaa - dd-mm-aaaa): ")
+rangFecha = input("\nIngrese un rango de fechas (dd-mm-aaaa:dd-mm-aaaa)(opcional):\n")
 
 with open('csv/listado.csv') as f:
     reader= csv.reader(f, delimiter=',')
@@ -31,15 +31,16 @@ with open('csv/listado.csv') as f:
             dniCSV = []
             tipoCSV = []
             estadoCSV = []
+            fechaCSV = []
             dniCSV.append(int(row[8]))
             tipoCSV.append(row[9])
             estadoCSV.append(row[10])
+            fechaCSV.append(row[5] + ':' + row[6])
             if dniCSV[i] == dni:
                 if tipoCSV[i] == tipo:
-                    if estadoCSV[i] == estado:
-                        print("NroCheque: {0},CodigoBanco: {1},CodigoScurusal: {2},NumeroCuentaOrigen: {3},NumeroCuentaDestino: {4},Valor: {5},FechaOrigen: {6},FechaPago: {7},DNI: {8},Tipo: {9},Estado:{10}".format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10]))
-                    else:
-                        print("NroCheque: {0},CodigoBanco: {1},CodigoScurusal: {2},NumeroCuentaOrigen: {3},NumeroCuentaDestino: {4},Valor: {5},FechaOrigen: {6},FechaPago: {7},DNI: {8},Tipo: {9},Estado:{10}".format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10]))
+                    if estadoCSV[i] == estado or estado == '':
+                        if fechaCSV[i] == rangFecha or rangFecha == '':
+                            print("NroCheque: {0},CodigoBanco: {1},CodigoScurusal: {2},NumeroCuentaOrigen: {3},NumeroCuentaDestino: {4},Valor: {5},FechaOrigen: {6},FechaPago: {7},DNI: {8},Tipo: {9},Estado:{10}".format(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10]))
 
     elif salida == "CSV":
         now = datetime.datetime.now()
