@@ -42,8 +42,8 @@ with open('csv/listado.csv') as f:
 
     elif salida == "CSV":
         now = datetime.datetime.now()
-                
-        with open(now.strftime('%Y-%m-%dT%H:%M:%S.txt'), "w") as f:
+        date_time = now.strftime(r"%d-%m-%Y_%H.%M.%S")      
+        with open('csv/' + str(dni) + '_' + date_time + '.csv'), "w") as f:
                     f.write(sys.argv[2])
 
     else:
