@@ -4,6 +4,11 @@
 #PANTALLA
 #EMITIDO
 #APROBADO
+
+import csv
+import sys
+import datetime
+
 print(sys.argv[0])
 archivo = input("\nEn que archivo desea buscar? ")
 
@@ -16,10 +21,6 @@ tipo = input("\nTipo de cheque (EMITIDO o DEPOSITADO): ")
 estado = input("\nEstado del cheque (PENDIENTE, APROBADO o RECHAZADO): ")
 
 rangFecha = input("\nIngrese un rango de fechas (dd-mm-aaaa - dd-mm-aaaa): ")
-
-import csv
-import sys
-import datetime
 
 with open('csv/listado.csv') as f:
     reader= csv.reader(f, delimiter=',')
