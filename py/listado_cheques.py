@@ -42,7 +42,7 @@ with open('csv/listado.csv') as f:
 
     elif salida == "CSV":
         now = datetime.datetime.now()
-        date_time = now.strftime(("%d-%m-%Y_%H.%M.%S"), "r")      
+        date_time = now.strftime(r"%d-%m-%Y_%H.%M.%S")      
         with open(('csv/' + str(dni) + '_' + date_time + '.csv'), "w") as f:
                     f.write(sys.argv[2])
 
