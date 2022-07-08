@@ -5,9 +5,9 @@
 #EMITIDO
 #APROBADO
 
-archivo = input("En que archivo desea buscar? ")
+archivo = input("\nEn que archivo desea buscar? ")
 
-dni = int(input("Ingrese el DNI: "))
+dni = int(input("\nIngrese el DNI: "))
 
 salida = input("\nEscriba como desea visualizar los datos (PANTALLA o CSV): ")
 
